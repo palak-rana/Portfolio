@@ -1,0 +1,4357 @@
+/* =====================================================
+   BASIC SETTINGS
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+
+    background-color: #eefaff;
+
+    color: #071b58;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   NAVIGATION BAR
+===================================================== */
+
+.navbar {
+
+    width: 100%;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 1000;
+
+    background-color: #eefaff;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #071b58;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.logo span {
+    font-size: 32px;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 48px;
+}
+
+
+.navigation a {
+
+    text-decoration: none;
+
+    color: #071b58;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+/* Navigation hover */
+
+.navigation a:hover {
+
+    color: #164fa7;
+}
+
+
+/* Active navigation */
+
+.navigation a.active {
+
+    font-weight: 700;
+}
+
+
+/* Small underline */
+
+.navigation a::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #071b58;
+
+    left: 50%;
+
+    bottom: -8px;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover::after,
+.navigation a.active::after {
+
+    width: 70%;
+}
+
+
+/* =====================================================
+   HOME SECTION
+===================================================== */
+
+.home-section {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 100px 6% 30px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* Main container */
+
+.home-container {
+
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.home-text {
+
+    width: 53%;
+
+    padding-left: 10px;
+
+    animation: slideFromLeft 1.5s ease forwards;
+}
+
+
+/* Main heading */
+
+.main-heading {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(55px, 5vw, 88px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    color: #071b58;
+
+}
+
+
+/* Nickname */
+
+.nickname {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 29px;
+
+    font-style: italic;
+
+    font-weight: 700;
+
+    color: #071b58;
+
+    margin-bottom: 32px;
+}
+
+
+/* Description */
+
+.description {
+
+    max-width: 750px;
+
+    font-size: 31px;
+
+    line-height: 1.18;
+
+    font-weight: 400;
+
+    color: #8497b9;
+
+    margin-bottom: 45px;
+    /*text-align: justify;*/
+}
+
+
+/* =====================================================
+   SOCIAL MEDIA
+===================================================== */
+
+.social-icons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.social {
+
+    width: 51px;
+
+    height: 51px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 23px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+/* Phone */
+
+.phone {
+    background-color: #1683c7;
+}
+
+
+/* Social hover */
+
+.social:hover {
+
+    transform: translateY(-7px) scale(1.08);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Individual colors */
+
+.github {
+    background-color: #000000;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.youtube {
+    background-color: #ff0000;
+}
+
+.gmail {
+    background-color: #d14836;
+}
+
+.twitter {
+    background-color: #000000;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+
+.instagram {
+    background-color: #e4405f;
+}
+
+
+/* =====================================================
+   RIGHT SIDE IMAGE
+===================================================== */
+
+.home-image {
+
+    width: 47%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation: slideFromRight 1.5s ease forwards;
+}
+
+
+.home-image img {
+
+    width: 80%;
+
+    max-width: 720px;
+
+    height: 60%;
+
+    display: block;
+    padding-bottom: 80px
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes slideFromLeft {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateX(-60px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideFromRight {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateX(60px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.menu-button {
+
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    color: #071b58;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   TEMPORARY SECTIONS
+===================================================== */
+
+.temporary-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 50px;
+
+    color: #071b58;
+
+    background-color: #eefaff;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .navigation {
+
+        gap: 25px;
+    }
+
+    .navigation a {
+
+        font-size: 17px;
+    }
+
+    .description {
+
+        font-size: 25px;
+    }
+
+    .main-heading {
+
+        font-size: 60px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+
+        height: 65px;
+
+        padding: 0 5%;
+    }
+
+
+    .logo {
+
+        font-size: 24px;
+    }
+
+    .logo span {
+
+        font-size: 26px;
+    }
+
+
+    .menu-button {
+
+        display: block;
+    }
+
+
+    .navigation {
+
+        position: absolute;
+
+        top: 65px;
+
+        right: 0;
+
+        width: 100%;
+
+        background-color: #eefaff;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        padding: 30px 0;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+
+    .navigation.show {
+
+        display: flex;
+    }
+
+
+    .navigation a {
+
+        font-size: 18px;
+    }
+
+
+    .home-section {
+
+        padding: 100px 6% 40px;
+    }
+
+
+    .home-container {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .home-text {
+
+        width: 100%;
+
+        padding: 0;
+    }
+
+
+    .main-heading {
+
+        font-size: 42px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .nickname {
+
+        font-size: 22px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .description {
+
+        font-size: 18px;
+
+        line-height: 1.5;
+
+        margin-bottom: 30px;
+    }
+
+
+    .social-icons {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .social {
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 19px;
+    }
+
+
+    .home-image {
+
+        width: 100%;
+
+        margin-top: 30px;
+    }
+
+
+    .home-image img {
+
+        max-width: 500px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .main-heading {
+
+        font-size: 35px;
+    }
+
+    .nickname {
+
+        font-size: 19px;
+    }
+
+    .description {
+
+        font-size: 16px;
+    }
+
+    .social {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 17px;
+    }
+}
+
+/* =========================================================
+   EDUCATION SECTION
+   ========================================================= */
+
+.education-section {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #eefaff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   EDUCATION HERO
+   ========================================================= */
+
+.education-hero {
+    width: 100%;
+    max-width: 1250px;
+
+    min-height: 560px;
+
+    margin: 0 auto;
+
+    padding: 25px 45px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* =========================================================
+   EDUCATION HERO IMAGE
+   ========================================================= */
+
+.education-hero-image {
+    width: 52%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    transform: translateX(-70px);
+
+    animation: educationImageIn 1.2s ease forwards;
+}
+
+
+.education-hero-image img {
+    width: 100%;
+
+    max-width: 600px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================================================
+   EDUCATION HERO CONTENT
+   ========================================================= */
+
+.education-hero-content {
+    width: 48%;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateX(70px);
+
+    animation: educationContentIn 1.2s ease forwards;
+}
+
+
+.education-hero-content h1 {
+    margin: 0 0 25px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(50px, 5vw, 68px);
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+.education-hero-content h2 {
+    margin: 0 0 28px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(22px, 2.2vw, 30px);
+
+    line-height: 1.3;
+
+    font-weight: 600;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   CERTIFICATION ICONS
+   ========================================================= */
+
+.education-certifications {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin-top: 15px;
+}
+
+
+.certification-icon {
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+.certification-icon:hover {
+    transform: translateY(-7px) scale(1.08);
+}
+
+
+/* edX */
+
+.certification-icon.edx {
+    color: #e5a529;
+
+    font-size: 37px;
+}
+
+
+/* HackerRank */
+
+.certification-icon.hackerrank {
+    background: #2ecf70;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* Udemy */
+
+.certification-icon.udemy {
+    color: #46364a;
+
+    font-size: 37px;
+}
+
+
+/* Power BI */
+
+.certification-icon.powerbi {
+    color: #1f9ccc;
+
+    font-size: 35px;
+}
+
+
+/* HackerEarth */
+
+.certification-icon.hackerearth {
+    background: #252d49;
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    border-radius: 3px;
+}
+
+
+/* Kaggle */
+
+.certification-icon.kaggle {
+    width: auto;
+
+    color: #52bdd0;
+
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DEGREES SECTION
+   ========================================================= */
+
+.degrees-section {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 50px 30px 50px;
+}
+
+
+/* =========================================================
+   DEGREES HEADING
+   ========================================================= */
+
+.degrees-heading {
+    margin: 0 0 45px;
+
+    text-align: center;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   DEGREE ROW
+   Logo + Card
+   ========================================================= */
+
+.degree-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 205px 1fr;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   UNIVERSITY LOGO CIRCLE
+   ========================================================= */
+
+.university-logo {
+    width: 175px;
+
+    height: 175px;
+
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px;
+
+    position: relative;
+
+    z-index: 5;
+
+    border: 1px solid #e7eef2;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.13);
+
+    transition:
+        box-shadow 0.4s ease;
+}
+
+
+.university-logo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   LOGO HOVER
+   ========================================================= */
+
+.degree-row:hover .university-logo {
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   DEGREE CARD
+   ========================================================= */
+
+.degree-card {
+    width: 100%;
+
+    margin: 0;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    background: #f5fcff;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+
+    transition:
+        box-shadow 0.3s ease;
+}
+
+
+.degree-card:hover {
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   DEGREE CARD HEADER
+   ========================================================= */
+
+.degree-card-header {
+    min-height: 90px;
+
+    padding: 20px 28px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #82bfd7;
+}
+
+
+.degree-left {
+    flex: 1;
+}
+
+
+.degree-left h3 {
+    margin: 0 0 10px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+.degree-left h4 {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   DEGREE DATE
+   ========================================================= */
+
+.degree-date {
+    white-space: nowrap;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    color: #071b58;
+
+    align-self: flex-start;
+
+    padding-top: 3px;
+}
+
+
+/* =========================================================
+   DEGREE CARD BODY
+   ========================================================= */
+
+.degree-card-body {
+    padding: 28px 30px;
+
+    background-color: #f5fcff;
+}
+
+
+.degree-card-body ul {
+    margin: 0 0 22px;
+
+    padding-left: 25px;
+}
+
+
+.degree-card-body li {
+    margin-bottom: 12px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    font-weight: 500;
+
+    color: #233b5d;
+}
+
+
+.degree-card-body li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   BULLET COLOR
+   ========================================================= */
+
+.degree-card-body li::marker {
+    color: #f26a4f;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   VISIT WEBSITE BUTTON
+   ========================================================= */
+
+.degree-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 17px;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #071b58;
+
+    border: 1px solid #071b58;
+
+    border-radius: 4px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.degree-button:hover {
+    background: #071b58;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   GENERAL REVEAL
+   ========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   DEGREE LOGO SCROLL ANIMATION
+   ========================================================= */
+
+.degree-row.reveal .university-logo {
+    opacity: 0;
+
+    transform:
+        translateX(-65px)
+        scale(0.88);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+/* =========================================================
+   DEGREE CARD SCROLL ANIMATION
+   ========================================================= */
+
+.degree-row.reveal .degree-card {
+    opacity: 0;
+
+    transform:
+        translateX(65px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+/* =========================================================
+   ACTIVE DEGREE
+   ========================================================= */
+
+.degree-row.reveal.active .university-logo {
+    opacity: 1;
+
+    transform:
+        translateX(-18px)
+        scale(1);
+}
+
+
+.degree-row.reveal.active .degree-card {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   SECOND DEGREE SLIGHT DELAY
+   ========================================================= */
+
+.degree-row:nth-of-type(2).reveal .university-logo,
+.degree-row:nth-of-type(2).reveal .degree-card {
+    transition-delay: 0.15s;
+}
+
+
+/* =========================================================
+   HERO ANIMATIONS
+   ========================================================= */
+
+@keyframes educationImageIn {
+
+    0% {
+        opacity: 0;
+
+        transform: translateX(-70px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes educationContentIn {
+
+    0% {
+        opacity: 0;
+
+        transform: translateX(70px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .education-hero {
+        padding-left: 30px;
+
+        padding-right: 30px;
+
+        gap: 20px;
+    }
+
+
+    .education-hero-content h1 {
+        font-size: 50px;
+    }
+
+
+    .education-hero-content h2 {
+        font-size: 22px;
+    }
+
+
+    .education-certifications {
+        gap: 12px;
+    }
+
+
+    .degree-row {
+        grid-template-columns: 165px 1fr;
+    }
+
+
+    .university-logo {
+        width: 145px;
+
+        height: 145px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .education-section {
+        padding-top: 65px;
+    }
+
+
+    .education-hero {
+        min-height: auto;
+
+        padding: 50px 25px 20px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .education-hero-image {
+        width: 100%;
+
+        order: 1;
+    }
+
+
+    .education-hero-image img {
+        max-width: 450px;
+    }
+
+
+    .education-hero-content {
+        width: 100%;
+
+        order: 2;
+    }
+
+
+    .education-hero-content h1 {
+        font-size: 44px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .education-hero-content h2 {
+        font-size: 20px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .education-certifications {
+        gap: 10px;
+    }
+
+
+    .degrees-section {
+        padding: 40px 20px 70px;
+    }
+
+
+    .degrees-heading {
+        font-size: 30px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* Degree row becomes vertical */
+
+    .degree-row {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 0;
+
+        margin-bottom: 60px;
+    }
+
+
+    /* Bigger logo on mobile */
+
+    .university-logo {
+        width: 135px;
+
+        height: 135px;
+
+        margin-bottom: -25px;
+
+        z-index: 10;
+    }
+
+
+    /* Stop horizontal animation on mobile */
+
+    .degree-row.reveal .university-logo {
+        transform:
+            translateY(-25px)
+            scale(0.88);
+    }
+
+
+    .degree-row.reveal.active .university-logo {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+
+    .degree-row.reveal .degree-card {
+        transform:
+            translateY(40px);
+    }
+
+
+    .degree-row.reveal.active .degree-card {
+        transform:
+            translateY(0);
+    }
+
+
+    .degree-row .degree-card {
+        width: 100%;
+    }
+
+
+    .degree-card-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px 20px 20px;
+
+        gap: 10px;
+    }
+
+
+    .degree-date {
+        align-self: flex-start;
+    }
+
+
+    .degree-card-body {
+        padding: 22px 20px 28px;
+    }
+
+
+    .degree-card-body li {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .education-hero {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    .education-hero-content h1 {
+        font-size: 38px;
+    }
+
+
+    .education-hero-content h2 {
+        font-size: 18px;
+    }
+
+
+    .certification-icon {
+        width: 40px;
+
+        height: 40px;
+    }
+
+
+    .degrees-section {
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .degrees-heading {
+        font-size: 27px;
+    }
+
+
+    .university-logo {
+        width: 125px;
+
+        height: 125px;
+    }
+
+
+    .degree-card-header {
+        padding: 25px 18px 18px;
+    }
+
+
+    .degree-left h3 {
+        font-size: 17px;
+    }
+
+
+    .degree-left h4 {
+        font-size: 13px;
+    }
+
+
+    .degree-card-body {
+        padding: 20px 18px 25px;
+    }
+
+
+    .degree-card-body li {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+}
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.experience-section {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 90px 55px 100px;
+
+    background: #edf9fe;
+
+    overflow: hidden;
+}
+
+
+/* EXPERIENCE HEADING */
+
+.experience-heading {
+    margin: 0 auto 65px;
+
+    text-align: center;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+/* EXPERIENCE TIMELINE */
+
+.experience-timeline {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+/* =========================================================
+   EXPERIENCE SECTION
+   ========================================================= */
+
+.experience-section {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 0px 55px 50px;
+
+    background: #edf9fe;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   EXPERIENCE INTRO
+   ========================================================= */
+
+.experience-intro {
+    max-width: 1200px;
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+.experience-image {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.experience-image img {
+    width: 100%;
+
+    max-width: 570px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+.experience-intro-content {
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.experience-intro-content h2 {
+    margin: 0 0 18px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+.experience-intro-content p {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    font-weight: 500;
+
+    color: #77849a;
+}
+
+
+/* =========================================================
+   EXPERIENCE TIMELINE
+   ========================================================= */
+
+.experience-timeline {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   EXPERIENCE ITEM
+   ========================================================= */
+
+.experience-item {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 170px;
+
+    margin-bottom: 55px;
+
+    padding-left: 155px;
+
+    opacity: 0;
+
+    transform: translateX(60px);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+.experience-item.active {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   TIMELINE LINE
+   ========================================================= */
+
+.experience-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 68px;
+
+    top: 78px;
+
+    bottom: -55px;
+
+    width: 2px;
+
+    background: #82bfd7;
+}
+
+
+.experience-item:last-child::before {
+    display: none;
+}
+
+
+/* =========================================================
+   COMPANY LOGO
+   ========================================================= */
+
+.experience-logo-wrap {
+    position: absolute;
+
+    left: 15px;
+
+    top: 0;
+
+    width: 105px;
+
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+.experience-logo {
+    width: 92px;
+
+    height: 92px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid #e1ebef;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.13);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.experience-logo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+
+    display: block;
+}
+img.nestle {
+    padding: 9px;
+}
+
+.experience-item:hover .experience-logo {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.17);
+}
+
+
+/* =========================================================
+   TIMELINE DOT
+   ========================================================= */
+
+.experience-dot {
+    position: absolute;
+
+    left: 81px;
+
+    top: 39px;
+
+    width: 16px;
+
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: #82bfd7;
+
+    border: 3px solid #edf9fe;
+
+    z-index: 6;
+}
+
+
+/* =========================================================
+   EXPERIENCE CARD
+   ========================================================= */
+
+.experience-card {
+    width: 100%;
+
+    background: #f5fcff;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.11);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.experience-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.experience-card-header {
+    padding: 22px 28px 8px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.experience-card-header h3 {
+    margin: 0 0 5px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+.experience-card-header h4 {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+
+    color: #26394f;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.experience-date {
+    white-space: nowrap;
+
+    padding-top: 3px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    color: #77849a;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.experience-card-body {
+    padding: 12px 28px 25px;
+}
+
+
+.experience-card-body ul {
+    margin: 0;
+
+    padding-left: 20px;
+}
+
+
+.experience-card-body li {
+    margin-bottom: 9px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13.5px;
+
+    line-height: 1.65;
+
+    color: #26394f;
+}
+
+
+.experience-card-body li:last-child {
+    margin-bottom: 0;
+}
+
+
+.experience-card-body li::marker {
+    color: #f26a4f;
+}
+
+
+.experience-card-body strong {
+    font-weight: 700;
+
+    color: #26394f;
+}
+
+
+/* =========================================================
+   STAGGERED ANIMATION
+   ========================================================= */
+
+.experience-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+
+.experience-item:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+
+.experience-item:nth-child(3) {
+    transition-delay: 0.30s;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .experience-section {
+        padding: 70px 20px 80px;
+    }
+
+
+    .experience-intro {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-bottom: 60px;
+    }
+
+
+    .experience-image img {
+        max-width: 420px;
+    }
+
+
+    .experience-intro-content {
+        padding: 0;
+    }
+
+
+    .experience-intro-content h2 {
+        font-size: 30px;
+    }
+
+
+    .experience-intro-content p {
+        font-size: 14px;
+    }
+
+
+    .experience-item {
+        padding-left: 0;
+
+        padding-top: 110px;
+
+        margin-bottom: 60px;
+    }
+
+
+    .experience-item::before {
+        left: 50%;
+
+        top: 100px;
+
+        bottom: -60px;
+    }
+
+
+    .experience-logo-wrap {
+        left: 50%;
+
+        top: 0;
+
+        transform: translateX(-50%);
+    }
+
+
+    .experience-logo {
+        width: 85px;
+
+        height: 85px;
+    }
+
+
+    .experience-dot {
+        left: 50%;
+
+        top: 94px;
+
+        transform: translateX(-50%);
+    }
+
+
+    .experience-card-header {
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 20px 18px 8px;
+    }
+
+
+    .experience-card-header h3 {
+        font-size: 18px;
+    }
+
+
+    .experience-card-header h4 {
+        font-size: 13px;
+    }
+
+
+    .experience-date {
+        font-size: 12px;
+    }
+
+
+    .experience-card-body {
+        padding: 12px 18px 22px;
+    }
+
+
+    .experience-card-body li {
+        font-size: 12px;
+    }
+
+}
+/* =========================================================
+   PROJECTS SECTION
+   ========================================================= */
+
+.projects-section {
+
+    width: 100%;
+
+    padding: 10px 40px;
+
+    background: #edf9fe;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.projects-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.projects-heading-wrap {
+
+    margin-bottom: 55px;
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+.projects-heading-wrap.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.projects-heading {
+
+    margin: 0 0 14px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+.projects-subheading {
+
+    max-width: 680px;
+
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #647692;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+   ========================================================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+
+.project-card {
+
+    min-height: 390px;
+
+    padding: 32px 34px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid #e0edf2;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(7, 27, 88, 0.06);
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.project-card.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.project-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(7, 27, 88, 0.12);
+}
+
+
+/* =========================================================
+   PROJECT ICON
+   ========================================================= */
+
+.project-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #eef7fb;
+
+    color: #071b58;
+
+    font-size: 22px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.project-card:hover .project-icon {
+
+    transform:
+        translateY(-3px)
+        scale(1.05);
+
+    background: #e1f1f7;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.project-title {
+
+    margin: 0 0 9px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   PROJECT META
+   ========================================================= */
+
+.project-meta {
+
+    margin: 0 0 20px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #3d79b6;
+}
+
+
+/* =========================================================
+   SHORT DESCRIPTION
+   ========================================================= */
+
+.project-short-description {
+
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    color: #66758d;
+}
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.project-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+}
+
+
+.project-tags span {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #f3f8fb;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #315d91;
+}
+
+
+/* =========================================================
+   VIEW DETAILS
+   ========================================================= */
+
+.project-view {
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #edf1f4;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #2f72bb;
+}
+
+
+.project-view span {
+
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.project-card:hover .project-view span {
+
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   STAGGERED CARD ANIMATION
+   ========================================================= */
+
+.project-card:nth-child(1) {
+
+    transition-delay: 0.05s;
+}
+
+
+.project-card:nth-child(2) {
+
+    transition-delay: 0.15s;
+}
+
+
+.project-card:nth-child(3) {
+
+    transition-delay: 0.25s;
+}
+
+
+.project-card:nth-child(4) {
+
+    transition-delay: 0.35s;
+}
+
+
+/* =========================================================
+   MODAL BACKGROUND
+   ========================================================= */
+
+.project-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.project-modal.active {
+
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   BLURRED BACKGROUND
+   ========================================================= */
+
+.project-modal-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(5, 20, 55, 0.52);
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL BOX
+   ========================================================= */
+
+.project-modal-box {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 680px;
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 42px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
+
+    transform:
+        translateY(30px)
+        scale(0.94);
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.project-modal.active
+.project-modal-box {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.project-modal-close {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 20px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f2f6f8;
+
+    color: #071b58;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.project-modal-close:hover {
+
+    transform: rotate(90deg);
+
+    background: #e3eff4;
+}
+
+
+/* =========================================================
+   MODAL ICON
+   ========================================================= */
+
+.modal-project-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #eef7fb;
+
+    color: #071b58;
+
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   MODAL META
+   ========================================================= */
+
+.modal-project-meta {
+
+    margin: 0 0 8px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #3d79b6;
+}
+
+
+/* =========================================================
+   MODAL TITLE
+   ========================================================= */
+
+.modal-project-title {
+
+    margin: 0 45px 22px 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 28px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   MODAL DESCRIPTION
+   ========================================================= */
+
+.modal-project-description {
+
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #62738c;
+}
+
+
+/* =========================================================
+   TECHNOLOGY HEADING
+   ========================================================= */
+
+.modal-tech-heading {
+
+    margin: 28px 0 14px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   TECHNOLOGY LIST
+   ========================================================= */
+
+.modal-tech-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+
+.modal-tech-item {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border: 1px solid #dceaf0;
+
+    border-radius: 9px;
+
+    background: #f7fbfd;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #314d73;
+}
+
+
+.modal-tech-item i {
+
+    color: #2f72bb;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   VIEW PROJECT BUTTON
+   ========================================================= */
+
+.modal-view-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 175px;
+
+    padding: 14px 22px;
+
+    border-radius: 11px;
+
+    background: #071b58;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.modal-view-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(7, 27, 88, 0.22);
+}
+
+
+.modal-view-button span {
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   PREVENT PAGE SCROLL WHEN MODAL OPEN
+   ========================================================= */
+
+body.modal-open {
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .projects-section {
+
+        padding: 80px 25px;
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .projects-section {
+
+        padding: 70px 20px;
+    }
+
+
+    .projects-heading {
+
+        font-size: 32px;
+    }
+
+
+    .project-card {
+
+        min-height: 350px;
+
+        padding: 27px 24px;
+    }
+
+
+    .project-title {
+
+        font-size: 19px;
+    }
+
+
+    .project-short-description {
+
+        font-size: 13px;
+    }
+
+
+    .project-modal {
+
+        padding: 15px;
+    }
+
+
+    .project-modal-box {
+
+        max-height: 90vh;
+
+        padding: 30px 24px;
+
+        border-radius: 18px;
+    }
+
+
+    .modal-project-title {
+
+        font-size: 22px;
+
+        margin-right: 25px;
+    }
+
+
+    .modal-project-description {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+}
+/* =========================================================
+   CERTIFICATIONS SECTION
+   ========================================================= */
+
+.certifications-section {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 90px 55px 110px;
+
+    background: #edf9fe;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.certifications-heading {
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   CERTIFICATION GRID
+   ========================================================= */
+
+.certifications-grid {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   CERTIFICATION CARD
+   ========================================================= */
+
+.cert-card {
+
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 28px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    text-decoration: none;
+
+    background: #f5fcff;
+
+    border: 1px solid #dcecf2;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.10);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* =========================================================
+   ACTIVE SCROLL ANIMATION
+   ========================================================= */
+
+.cert-card.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.cert-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color: #9ccddd;
+
+    box-shadow:
+        0 16px 32px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   CERTIFICATION LOGO
+   ========================================================= */
+
+.cert-logo {
+
+    flex-shrink: 0;
+
+    width: 72px;
+
+    height: 72px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #e0ebef;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.10);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.cert-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.cert-card:hover .cert-logo {
+
+    transform:
+        scale(1.08)
+        rotate(3deg);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   CERTIFICATION CONTENT
+   ========================================================= */
+
+.cert-content {
+
+    flex: 1;
+
+    padding-right: 20px;
+}
+
+
+.cert-content h3 {
+
+    margin: 0 0 9px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+
+    color: #071b58;
+}
+
+
+.cert-content p {
+
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    font-weight: 500;
+
+    color: #77849a;
+}
+
+
+/* =========================================================
+   OPEN LINK ARROW
+   ========================================================= */
+
+.cert-arrow {
+
+    position: absolute;
+
+    right: 22px;
+
+    top: 20px;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    color: #0c6b9f;
+
+    background: #e7f6fc;
+
+    opacity: 0.75;
+
+    transform: translate(5px, -5px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.cert-card:hover .cert-arrow {
+
+    opacity: 1;
+
+    transform:
+        translate(0, 0);
+
+    background: #d9f1fa;
+}
+
+
+/* =========================================================
+   STAGGERED ANIMATION
+   ========================================================= */
+
+.cert-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+
+.cert-card:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+
+.cert-card:nth-child(3) {
+    transition-delay: 0.24s;
+}
+
+
+.cert-card:nth-child(4) {
+    transition-delay: 0.36s;
+}
+
+
+.cert-card:nth-child(5) {
+    transition-delay: 0.48s;
+}
+
+
+.cert-card:nth-child(6) {
+    transition-delay: 0.60s;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .certifications-section {
+
+        padding:
+            70px 20px 80px;
+    }
+
+
+    .certifications-heading {
+
+        margin-bottom: 45px;
+
+        font-size: 32px;
+    }
+
+
+    .certifications-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .cert-card {
+
+        min-height: 165px;
+
+        padding: 25px 22px;
+
+        gap: 18px;
+    }
+
+
+    .cert-logo {
+
+        width: 62px;
+
+        height: 62px;
+    }
+
+
+    .cert-content h3 {
+
+        font-size: 16px;
+    }
+
+
+    .cert-content p {
+
+        font-size: 13px;
+    }
+
+
+    .cert-arrow {
+
+        right: 15px;
+
+        top: 15px;
+
+        width: 28px;
+
+        height: 28px;
+
+        font-size: 16px;
+    }
+
+}
+/* =========================================================
+   CONTACT / FOOTER
+   ========================================================= */
+
+.contact-footer {
+
+    width: 100%;
+
+    padding: 85px 40px 30px;
+
+    background: #edf9fe;
+
+    overflow: hidden;
+}
+
+
+.contact-container {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.contact-heading {
+
+    margin: 0 0 15px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #071b58;
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+.contact-heading.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.contact-text {
+
+    max-width: 650px;
+
+    margin: 0 0 45px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    font-weight: 500;
+
+    color: #647692;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.9s ease 0.1s,
+        transform 0.9s ease 0.1s;
+}
+
+
+.contact-text.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+   ========================================================= */
+
+.contact-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+    margin-bottom: 38px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.9s ease 0.2s,
+        transform 0.9s ease 0.2s;
+}
+
+
+.contact-info.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.contact-info-item {
+
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    text-decoration: none;
+
+    color: #071b58;
+}
+
+
+.contact-info-item > i {
+
+    width: 30px;
+
+    font-size: 22px;
+
+    color: #071b58;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.contact-info-item div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.contact-info-item span {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #172542;
+}
+
+
+.contact-info-item p {
+
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #647692;
+}
+
+
+.contact-info-item:hover > i {
+
+    transform:
+        translateY(-3px)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.contact-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.9s ease 0.3s,
+        transform 0.9s ease 0.3s;
+}
+
+
+.contact-actions.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SEND EMAIL BUTTON
+   ========================================================= */
+
+.contact-email-button {
+
+    min-width: 185px;
+
+    height: 68px;
+
+    padding: 0 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 14px;
+
+    background: #172542;
+
+    border: 1px solid #172542;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(7, 27, 88, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.contact-email-button span {
+
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.contact-email-button:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(7, 27, 88, 0.18);
+}
+
+
+.contact-email-button:hover span {
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   DOWNLOAD RESUME BUTTON
+   ========================================================= */
+
+.contact-resume-button {
+
+    min-width: 235px;
+
+    height: 68px;
+
+    padding: 0 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #d7e4ee;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #172542;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.contact-resume-button span {
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.contact-resume-button:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color: #a9c8d8;
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.10);
+}
+
+
+.contact-resume-button:hover span {
+
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.contact-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin: 70px 0 25px;
+
+    background: #d5e5ec;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
+.copyright {
+
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: #8996a8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .contact-footer {
+
+        padding:
+            65px 22px 25px;
+    }
+
+
+    .contact-heading {
+
+        font-size: 32px;
+    }
+
+
+    .contact-text {
+
+        font-size: 14px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .contact-info {
+
+        gap: 20px;
+    }
+
+
+    .contact-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+    }
+
+
+    .contact-email-button,
+    .contact-resume-button {
+
+        width: 100%;
+
+        min-width: 0;
+
+        height: 60px;
+    }
+
+
+    .contact-divider {
+
+        margin-top: 55px;
+    }
+
+}
+/* =========================================================
+   CONTACT TWO COLUMN LAYOUT
+   ========================================================= */
+
+.contact-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.contact-left {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   RIGHT SIDE VISUAL
+   ========================================================= */
+
+.contact-visual {
+
+    position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    transform: translateX(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+.contact-visual.active {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   MAIN CIRCLE
+   ========================================================= */
+
+.visual-circle {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d9f2fb,
+            #b9dce9
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 25px 55px rgba(7, 27, 88, 0.13);
+
+    animation:
+        floatingCircle 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   INNER CIRCLE
+   ========================================================= */
+
+.visual-circle::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        inset 0 0 0 1px #d8e9ef;
+}
+
+
+/* =========================================================
+   INITIALS
+   ========================================================= */
+
+.visual-initials {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 76px;
+
+    font-weight: 700;
+
+    letter-spacing: -5px;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   DECORATIVE RING
+   ========================================================= */
+
+.visual-ring {
+
+    position: absolute;
+
+    width: 330px;
+
+    height: 330px;
+
+    border-radius: 50%;
+
+    border: 2px dashed #8fc7dc;
+
+    animation:
+        rotateRing 18s linear infinite;
+}
+
+
+/* =========================================================
+   FLOATING ICONS
+   ========================================================= */
+
+.floating-icon {
+
+    position: absolute;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #071b58;
+
+    font-size: 21px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 25px rgba(7, 27, 88, 0.13);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.floating-icon:hover {
+
+    transform:
+        translateY(-7px)
+        scale(1.08);
+
+    background: #071b58;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ICON POSITIONS
+   ========================================================= */
+
+.linkedin-float {
+
+    top: 35px;
+
+    right: 65px;
+}
+
+
+.github-float {
+
+    bottom: 75px;
+
+    left: 35px;
+}
+
+
+.email-float {
+
+    top: 115px;
+
+    left: 15px;
+}
+
+
+/* =========================================================
+   CAPTION
+   ========================================================= */
+
+.visual-caption {
+
+    position: absolute;
+
+    right: 10px;
+
+    bottom: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 10px 25px rgba(7, 27, 88, 0.10);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.visual-caption span {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    color: #71819a;
+}
+
+
+.visual-caption strong {
+
+    margin-top: 3px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    color: #071b58;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes floatingCircle {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+    }
+
+    50% {
+
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes rotateRing {
+
+    from {
+
+        transform: rotate(0deg);
+    }
+
+    to {
+
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .contact-visual {
+
+        min-height: 350px;
+
+        order: 2;
+    }
+
+
+    .contact-left {
+
+        order: 1;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .contact-visual {
+
+        min-height: 320px;
+    }
+
+
+    .visual-circle {
+
+        width: 230px;
+
+        height: 230px;
+    }
+
+
+    .visual-circle::before {
+
+        width: 170px;
+
+        height: 170px;
+    }
+
+
+    .visual-ring {
+
+        width: 255px;
+
+        height: 255px;
+    }
+
+
+    .visual-initials {
+
+        font-size: 58px;
+    }
+
+
+    .floating-icon {
+
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 18px;
+    }
+
+
+    .linkedin-float {
+
+        top: 20px;
+
+        right: 25px;
+    }
+
+
+    .github-float {
+
+        bottom: 45px;
+
+        left: 20px;
+    }
+
+
+    .email-float {
+
+        top: 85px;
+
+        left: 0;
+    }
+
+
+    .visual-caption {
+
+        right: 0;
+
+        bottom: 0;
+    }
+
+}
+.pbi-icon {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 15px;
+
+    height: 15px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    border-radius: 3px;
+
+    background: #f2c811;
+
+    color: #ffffff;
+}
